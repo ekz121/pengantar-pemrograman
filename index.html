@@ -341,23 +341,24 @@
             <div class="task-content">
                 <h3>Coding Program</h3>
                 <div class="code-box">
-                    <pre><code>#include <iostream>
+                    <pre><code>#include &lt;iostream&gt;
 
 int main() {
-    int iNo;
-    double dblHarga, dblTotal;
+int iNo;
+double dblHarga, dblTotal;
 
-    std::cout << "Masukkan Harga per unit: ";
-    std::cin >> dblHarga;
+std::cout << "Masukkan Harga per unit: ";
+std::cin >> dblHarga;
 
-    std::cout << "Masukkan Kuantiti: ";
-    std::cin >> iNo;
+std::cout << "Masukkan Kuantiti: ";
+std::cin >> iNo;
 
-    dblTotal = dblHarga * iNo;
-    std::cout << "Total Harga adalah: " << dblTotal << std::endl;
+dblTotal = dblHarga * iNo;
+std::cout << "Total Harga adalah: " << dblTotal << std::endl;
 
-    return 0;
+return 0;
 }</code></pre>
+                            
                     <button class="copy-btn"></button>
                 </div>
             </div>
@@ -387,6 +388,9 @@ int main() {
             </div>
         </div>
     </div>
+    <br>
+    <br>
+    <br>
     <div class="container">
         <div class="task-box">
             <h2 class="task-title">Coding 2</h2>
@@ -394,12 +398,13 @@ int main() {
             <div class="task-content">
                 <h3>Coding Program</h3>
                 <div class="code-box">
-                    <pre><code>#include <iostream>
+                    <pre><code>#include &lt;iostream&gt;
                    
 using namespace std;
 
 // Fungsi untuk mencari harga produk berdasarkan ID
 double cariHargaProduk(int idProduk) {
+    // Simulasikan pencarian harga produk, Anda dapat menggantinya dengan logika sesuai kebutuhan
     if (idProduk == 1) {
         return 1500.0;
     } else if (idProduk == 2) {
@@ -407,7 +412,7 @@ double cariHargaProduk(int idProduk) {
     } else if (idProduk == 3) {
         return 12000.0;
     } else {
-        return -1.0;
+        return -1.0; // Produk tidak ditemukan
     }
 }
 
@@ -415,9 +420,11 @@ int main() {
     int idProduk, kuantitas;
     double harga, totalHarga, diskon;
 
+    // Input ID produk
     cout << "Masukkan ID produk: ";
     cin >> idProduk;
 
+    // Cari harga produk berdasarkan ID
     harga = cariHargaProduk(idProduk);
 
     if (harga == -1) {
@@ -425,11 +432,14 @@ int main() {
         return 1;
     }
 
+    // Input kuantitas
     cout << "Masukkan kuantitas: ";
     cin >> kuantitas;
 
+    // Hitung total harga sebelum diskon
     totalHarga = harga * kuantitas;
 
+    // Tentukan diskon berdasarkan total harga sebelum diskon
     if (totalHarga >= 1000 && totalHarga < 5000) {
         diskon = 0.05;
     } else if (totalHarga >= 5000 && totalHarga < 10000) {
@@ -437,18 +447,22 @@ int main() {
     } else if (totalHarga >= 10000) {
         diskon = 0.10;
     } else {
-        diskon = 0.0;
+        diskon = 0.0; // Tidak ada diskon jika total harga kurang dari 1000
     }
 
+    // Hitung total harga setelah diskon
     totalHarga = totalHarga - (totalHarga * diskon);
 
+    // Tampilkan hasil
     cout << "Harga produk: " << harga << endl;
-    cout << "Total harga sebelum diskon: " << totalHarga / (1 - diskon) << endl;
+    cout << "Total harga sebelum diskon:1 " << totalHarga / (1 - diskon) << endl;
     cout << "Diskon: " << diskon * 100 << "%" << endl;
     cout << "Total harga setelah diskon: " << totalHarga << endl;
 
     return 0;
-}</code></pre>
+}
+                        
+                        </code></pre>
                     <button class="copy-btn"></button>
                 </div>
             </div>

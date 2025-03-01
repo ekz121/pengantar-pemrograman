@@ -54,7 +54,6 @@
             border: 2px solid rgba(0, 255, 255, 0.3);
             animation: neonPulse 2s infinite ease-in-out;
         }
-        /* Efek neon pulse pada border */
         @keyframes neonPulse {
             0% { 
                 border-color: rgba(0, 255, 255, 0.3);
@@ -69,7 +68,6 @@
                 box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
             }
         }
-        /* Efek ripple saat expanded */
         .task-box::before {
             content: '';
             position: absolute;
@@ -120,7 +118,7 @@
             border: 2px solid rgba(0, 255, 255, 0.8);
         }
         .task-box.expanded .view-btn {
-            display: none; /* Menyembunyikan tombol "Lihat" saat kotak diperbesar */
+            display: none;
         }
         .task-box img {
             max-width: 100%;
@@ -178,8 +176,6 @@
         .copy-btn.copied::before {
             content: "Copied!";
         }
-
-        /* Tombol Lihat */
         .view-btn {
             display: block;
             margin: 0 auto;
@@ -198,8 +194,6 @@
             transform: scale(1.1);
             box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
         }
-
-        /* Konten awal disembunyikan */
         .task-content {
             display: none;
             opacity: 0;
@@ -209,8 +203,6 @@
             display: block;
             opacity: 1;
         }
-
-        /* Backdrop */
         .backdrop {
             position: fixed;
             top: 0;
@@ -224,8 +216,6 @@
         .backdrop.active {
             display: block;
         }
-
-        /* Container untuk soal-soal */
         .quiz-container {
             width: 90%;
             max-width: 900px;
@@ -278,8 +268,25 @@
             transform: translateY(-5px);
             box-shadow: 0 0 25px rgba(255, 107, 107, 0.9);
         }
-
-        /* Animasi */
+        .download-btn {
+            display: block;
+            margin: 15px auto 0;
+            background: rgba(255, 107, 107, 0.8);
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            color: #fff;
+            font-size: 1em;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
+        }
+        .download-btn:hover {
+            background: rgba(255, 107, 107, 1);
+            transform: scale(1.1);
+            box-shadow: 0 0 15px rgba(255, 107, 107, 0.8);
+        }
         @keyframes expandAnimation {
             0% { transform: translate(-50%, -50%) scale(0.8); opacity: 0; }
             100% { transform: translate(-50%, -50%) scale(1); opacity: 1; }
@@ -292,7 +299,6 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-
         @media (max-width: 768px) {
             .task-box, .quiz-container {
                 width: 95%;
@@ -301,7 +307,7 @@
                 width: 95%;
                 max-height: 70vh;
             }
-            .copy-btn, .view-btn {
+            .copy-btn, .view-btn, .download-btn {
                 padding: 6px 10px;
                 font-size: 0.8em;
             }
@@ -322,7 +328,7 @@
         <h2>LAPORAN PRAKTIKUM</h2>
         <h3>Pemrograman Terstruktur</h3>
         <p><em>Praktikum 1: Pengantar Pemrograman</em></p>
-        <img src="wow/11.png" alt="Logo Kampus">
+        <img src="img/11.png" alt="Logo Kampus">
         <p>Nama : <em>Eka Kurniawan Zein</em></p>
         <p>NIM : <em>24026004</em></p>
         <p><strong>PROGRAM STUDI D3 TEKNOLOGI INFORMASI<br>POLITEKNIK SEMEN INDONESIA GRESIK</strong></p>
@@ -335,24 +341,23 @@
             <div class="task-content">
                 <h3>Coding Program</h3>
                 <div class="code-box">
-<pre><code>#include &lt;iostream&gt;
+                    <pre><code>#include <iostream>
 
 int main() {
-int iNo;
-double dblHarga, dblTotal;
+    int iNo;
+    double dblHarga, dblTotal;
 
-std::cout << "Masukkan Harga per unit: ";
-std::cin >> dblHarga;
+    std::cout << "Masukkan Harga per unit: ";
+    std::cin >> dblHarga;
 
-std::cout << "Masukkan Kuantiti: ";
-std::cin >> iNo;
+    std::cout << "Masukkan Kuantiti: ";
+    std::cin >> iNo;
 
-dblTotal = dblHarga * iNo;
-std::cout << "Total Harga adalah: " << dblTotal << std::endl;
+    dblTotal = dblHarga * iNo;
+    std::cout << "Total Harga adalah: " << dblTotal << std::endl;
 
-return 0;
+    return 0;
 }</code></pre>
-    
                     <button class="copy-btn"></button>
                 </div>
             </div>
@@ -361,22 +366,24 @@ return 0;
             <h2 class="task-title">Output Program</h2>
             <button class="view-btn">Lihat</button>
             <div class="task-content">
-                <img src="img 2/2.png" alt="Tampilan Output">
+                <img src="wow/2.png" alt="Tampilan Output">
+                <a href="wow/2.png" download="Output_Coding1.png" class="download-btn">Unduh Gambar</a>
             </div>
         </div>
         <div class="task-box">
             <h2 class="task-title">Grafik JSP</h2>
             <button class="view-btn">Lihat</button>
             <div class="task-content">
-                <img src="img 2/5.png" alt="Tampilan Output">
-            
+                <img src="wow/5.png" alt="Tampilan Output">
+                <a href="wow/5.png" download="JSP_Coding1.png" class="download-btn">Unduh Gambar</a>
             </div>
         </div>
         <div class="task-box">
             <h2 class="task-title">Penjelasan Program</h2>
             <button class="view-btn">Lihat</button>
             <div class="task-content">
-                <img src="img 2/1.png" alt="Tampilan Output">
+                <img src="wow/1.png" alt="Tampilan Output">
+                <a href="wow/1.png" download="Penjelasan_Coding1.png" class="download-btn">Unduh Gambar</a>
             </div>
         </div>
     </div>
@@ -387,13 +394,12 @@ return 0;
             <div class="task-content">
                 <h3>Coding Program</h3>
                 <div class="code-box">
-                    <pre><code>#include &lt;iostream&gt;
+                    <pre><code>#include <iostream>
                    
 using namespace std;
 
 // Fungsi untuk mencari harga produk berdasarkan ID
 double cariHargaProduk(int idProduk) {
-    // Simulasikan pencarian harga produk, Anda dapat menggantinya dengan logika sesuai kebutuhan
     if (idProduk == 1) {
         return 1500.0;
     } else if (idProduk == 2) {
@@ -401,7 +407,7 @@ double cariHargaProduk(int idProduk) {
     } else if (idProduk == 3) {
         return 12000.0;
     } else {
-        return -1.0; // Produk tidak ditemukan
+        return -1.0;
     }
 }
 
@@ -409,11 +415,9 @@ int main() {
     int idProduk, kuantitas;
     double harga, totalHarga, diskon;
 
-    // Input ID produk
     cout << "Masukkan ID produk: ";
     cin >> idProduk;
 
-    // Cari harga produk berdasarkan ID
     harga = cariHargaProduk(idProduk);
 
     if (harga == -1) {
@@ -421,14 +425,11 @@ int main() {
         return 1;
     }
 
-    // Input kuantitas
     cout << "Masukkan kuantitas: ";
     cin >> kuantitas;
 
-    // Hitung total harga sebelum diskon
     totalHarga = harga * kuantitas;
 
-    // Tentukan diskon berdasarkan total harga sebelum diskon
     if (totalHarga >= 1000 && totalHarga < 5000) {
         diskon = 0.05;
     } else if (totalHarga >= 5000 && totalHarga < 10000) {
@@ -436,23 +437,18 @@ int main() {
     } else if (totalHarga >= 10000) {
         diskon = 0.10;
     } else {
-        diskon = 0.0; // Tidak ada diskon jika total harga kurang dari 1000
+        diskon = 0.0;
     }
 
-    // Hitung total harga setelah diskon
     totalHarga = totalHarga - (totalHarga * diskon);
 
-    // Tampilkan hasil
     cout << "Harga produk: " << harga << endl;
-    cout << "Total harga sebelum diskon:1 " << totalHarga / (1 - diskon) << endl;
+    cout << "Total harga sebelum diskon: " << totalHarga / (1 - diskon) << endl;
     cout << "Diskon: " << diskon * 100 << "%" << endl;
     cout << "Total harga setelah diskon: " << totalHarga << endl;
 
     return 0;
-}
-
-</code></pre>
-                        
+}</code></pre>
                     <button class="copy-btn"></button>
                 </div>
             </div>
@@ -461,21 +457,24 @@ int main() {
             <h2 class="task-title">Output Program</h2>
             <button class="view-btn">Lihat</button>
             <div class="task-content">
-                <img src="img 2/3.png" alt="Tampilan Output">
+                <img src="wow/3.png" alt="Tampilan Output">
+                <a href="wow/3.png" download="Output_Coding2.png" class="download-btn">Unduh Gambar</a>
             </div>
         </div>
         <div class="task-box">
             <h2 class="task-title">Grafik JSP</h2>
             <button class="view-btn">Lihat</button>
             <div class="task-content">
-                <img src="img 2/6.png" alt="Tampilan Output">
+                <img src="wow/6.png" alt="Tampilan Output">
+                <a href="wow/6.png" download="JSP_Coding2.png" class="download-btn">Unduh Gambar</a>
             </div>
         </div>
         <div class="task-box">
             <h2 class="task-title">Penjelasan Program</h2>
             <button class="view-btn">Lihat</button>
             <div class="task-content">
-                <img src="img 2/4.png" alt="Tampilan Output">
+                <img src="wow/4.png" alt="Tampilan Output">
+                <a href="wow/4.png" download="Penjelasan_Coding2.png" class="download-btn">Unduh Gambar</a>
             </div>
         </div>
         <div class="task-box">
@@ -483,26 +482,27 @@ int main() {
             <button class="view-btn">Lihat</button>
             <div class="task-content">
                 <div class="code-box">
-                    <ul>
-                        <li>
-                            <strong>🧠 Melatih Logika dan Jadi Ahli Memecahkan Masalah</strong>
-                            <p>Belajar pemrograman melatih otakmu untuk berpikir secara logis dan sistematis. 💡 Setiap baris kode adalah tantangan yang mengasah kemampuan analitismu—keterampilan ini berguna banget, mulai dari menyelesaikan tugas sekolah, pekerjaan, hingga masalah sehari-hari!</p>
+                    <h3 style="text-align: center; color: #00ffff; text-shadow: 0 0 5px rgba(0, 255, 255, 0.8); margin-bottom: 20px;">🌟 Mengapa Pengantar Pemrograman Itu Penting? 🌟</h3>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #ff6b6b; font-size: 1.2em;">🧩 Dasar Logika dan Problem Solving</strong>
+                            <p style="color: #e0e0e0; line-height: 1.6;">Pengantar pemrograman melatih cara berpikir logis dan terstruktur. Kamu belajar memecah masalah besar jadi langkah kecil yang mudah diselesaikan—skill ini kece abis buat kehidupan sehari-hari!</p>
                         </li>
-                        <li>
-                            <strong>💻 Jadi Bagian dari Dunia Teknologi Modern</strong>
-                            <p>Hampir semua teknologi keren di sekitarmu—aplikasi, game, AI, bahkan mobil pintar—dibangun dengan pemrograman. 🚗 Dengan belajar coding, kamu punya tiket masuk untuk ikut berkontribusi dalam inovasi teknologi yang mengubah dunia. Keren, kan?</p>
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #00d4ff; font-size: 1.2em;">🚀 Gerbang Menuju Teknologi Masa Depan</strong>
+                            <p style="color: #e0e0e0; line-height: 1.6;">Dari aplikasi, game, sampai AI—semua dimulai dari pemrograman dasar. Dengan ini, kamu punya fondasi kuat untuk jadi bagian dari revolusi digital. Siap jadi trendsetter?</p>
                         </li>
-                        <li>
-                            <strong>🎨 Tingkatkan Kreativitasmu Tanpa Batas</strong>
-                            <p>Pemrograman bukan cuma soal angka dan logika, tapi juga kreativitas! 🖌️ Kamu bisa membuat aplikasi unik, mengotomatisasi tugas membosankan, atau bahkan merancang game seru. Bayangkan betapa puasnya melihat ide-ide kreatifmu jadi kenyataan!</p>
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #ffeb3b; font-size: 1.2em;">🎨 Kreativitas Tanpa Batas</strong>
+                            <p style="color: #e0e0e0; line-height: 1.6;">Coding itu seni! Pengantar pemrograman membukakan pintu untuk bikin sesuatu yang unik—aplikasi, website, atau game. Ide gila kamu bisa jadi nyata!</p>
                         </li>
-                        <li>
-                            <strong>🚀 Buka Jalan Menuju Karier Impian</strong>
-                            <p>Dunia kerja sedang haus akan talenta di bidang teknologi! Dengan kemampuan pemrograman, kamu bisa jadi pengembang aplikasi, data scientist, ahli cybersecurity, atau spesialis AI. 💼 Peluangnya luas, gajinya juga menggiurkan—siap jadi yang terdepan?</p>
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #4caf50; font-size: 1.2em;">💼 Investasi Karier Cerdas</strong>
+                            <p style="color: #e0e0e0; line-height: 1.6;">Dunia butuh programmer! Belajar dasar pemrograman membuka peluang jadi developer, analyst, atau bahkan bos startup. Masa depan cerah menanti!</p>
                         </li>
-                        <li>
-                            <strong>🌐 Pahami Dunia Digital dengan Lebih Baik</strong>
-                            <p>Pernah penasaran gimana cara kerja aplikasi favoritmu? Belajar pemrograman membantumu melihat "di balik layar" dunia digital. 📱 Kamu akan jadi pengguna yang lebih cerdas, kritis, dan bisa memanfaatkan teknologi secara maksimal untuk berbagai kebutuhan.</p>
+                        <li style="margin-bottom: 20px;">
+                            <strong style="color: #ab47bc; font-size: 1.2em;">🌍 Memahami Dunia Digital</strong>
+                            <p style="color: #e0e0e0; line-height: 1.6;">Pernah penasaran gimana teknologi bekerja? Pengantar pemrograman kasih kamu “kacamata” untuk ngerti logika di balik layar—jadi lebih melek digital!</p>
                         </li>
                     </ul>
                     <button class="copy-btn"></button>
@@ -510,8 +510,6 @@ int main() {
             </div>
         </div>
     </div>
-
-    <!-- Container untuk soal-soal -->
     <div class="quiz-container">
         <h2 class="quiz-title">Eksplorasi Soal-Soal</h2>
         <a href="https://ekz121.github.io/comming-soon/" class="quiz-link">Ke Halaman Soal</a>
@@ -532,23 +530,16 @@ int main() {
             }
         });
 
-        // Interaksi untuk task-box
         const taskBoxes = document.querySelectorAll('.task-box');
         const backdrop = document.getElementById('backdrop');
 
-        // Fungsi untuk menangani ekspansi/kontraksi
         const toggleExpand = (element) => {
-            // Tutup semua kotak lain yang sedang terbuka
             taskBoxes.forEach(box => {
                 if (box !== element && box.classList.contains('expanded')) {
                     box.classList.remove('expanded');
                 }
             });
-
-            // Toggle elemen yang diklik
             element.classList.toggle('expanded');
-
-            // Tampilkan/sembunyikan backdrop
             if (element.classList.contains('expanded')) {
                 backdrop.classList.add('active');
             } else {
@@ -556,16 +547,12 @@ int main() {
             }
         };
 
-        // Event listener untuk task-box
         taskBoxes.forEach(box => {
             const viewBtn = box.querySelector('.view-btn');
-            // Klik pada tombol "Lihat"
             viewBtn.addEventListener('click', (e) => {
-                e.stopPropagation(); // Mencegah event bubbling
+                e.stopPropagation();
                 toggleExpand(box);
             });
-
-            // Klik pada area kotak (selain tombol "Copy")
             box.addEventListener('click', (e) => {
                 if (!e.target.classList.contains('copy-btn')) {
                     toggleExpand(box);
@@ -573,30 +560,21 @@ int main() {
             });
         });
 
-        // Tutup kotak saat backdrop diklik
         backdrop.addEventListener('click', () => {
-            taskBoxes.forEach(box => {
-                box.classList.remove('expanded');
-            });
+            taskBoxes.forEach(box => box.classList.remove('expanded'));
             backdrop.classList.remove('active');
         });
 
-        // Fitur salin dinamis
         const copyButtons = document.querySelectorAll('.copy-btn');
         copyButtons.forEach(button => {
             button.addEventListener('click', (e) => {
-                e.stopPropagation(); // Mencegah event bubbling ke kotak
+                e.stopPropagation();
                 const codeBox = button.closest('.code-box');
-                const code = codeBox.querySelector('pre').textContent;
-
+                const code = codeBox.querySelector('pre, ul')?.textContent || '';
                 navigator.clipboard.writeText(code).then(() => {
                     button.classList.add('copied');
-                    setTimeout(() => {
-                        button.classList.remove('copied');
-                    }, 2000);
-                }).catch(err => {
-                    console.error('Gagal menyalin: ', err);
-                });
+                    setTimeout(() => button.classList.remove('copied'), 2000);
+                }).catch(err => console.error('Gagal menyalin: ', err));
             });
         });
     </script>

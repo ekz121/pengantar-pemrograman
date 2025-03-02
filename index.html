@@ -25,8 +25,7 @@
             z-index: -1;
         }
         .header {
-            width: 80%;
-            max-width: 1000px;
+            width: clamp(80%, 80vw, 1000px);
             margin: 20px auto;
             padding: 30px;
             background: rgba(255, 255, 255, 0.1);
@@ -41,8 +40,7 @@
             width: 100%;
         }
         .task-box {
-            width: 90%;
-            max-width: 900px;
+            width: clamp(80%, 90vw, 900px);
             background: rgba(255, 255, 255, 0.1);
             padding: 20px;
             border-radius: 10px;
@@ -91,8 +89,7 @@
             left: 50%;
             transform: translate(-50%, -50%) scale(1);
             max-height: 80vh;
-            width: 90%;
-            max-width: 800px;
+            width: clamp(80%, 90vw, 800px);
             overflow-y: auto;
             background: rgba(255, 255, 255, 0.15);
             box-shadow: 0 0 30px rgba(0, 255, 255, 0.7);
@@ -204,8 +201,7 @@
             display: block;
         }
         .quiz-container {
-            width: 90%;
-            max-width: 900px;
+            width: clamp(80%, 90vw, 900px);
             background: linear-gradient(135deg, rgba(255, 107, 107, 0.2), rgba(0, 212, 255, 0.2));
             padding: 30px;
             border-radius: 15px;
@@ -286,10 +282,24 @@
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        /* Media Query untuk Presisi di Mobile */
+        /* Media Queries untuk Dinamis di Desktop dan Mobile */
+        @media (max-width: 1024px) {
+            .header, .task-box, .quiz-container {
+                width: clamp(85%, 90vw, 900px);
+            }
+            .task-box.expanded {
+                width: clamp(85%, 95vw, 800px);
+                max-height: 85vh;
+            }
+            .task-title {
+                font-size: 1.4em;
+            }
+            .quiz-title {
+                font-size: 1.8em;
+            }
+        }
         @media (max-width: 768px) {
             .header {
-                width: 95%;
                 padding: 20px;
             }
             .container {
@@ -297,13 +307,12 @@
                 gap: 10px;
             }
             .task-box {
-                width: 95%;
                 padding: 15px;
             }
             .task-box.expanded {
-                width: 95%;
-                max-height: 85vh;
+                width: clamp(90%, 95vw, 800px);
                 padding: 20px;
+                max-height: 85vh;
             }
             .task-title {
                 font-size: 1.3em;
@@ -324,12 +333,11 @@
                 font-size: 0.9em;
             }
             .quiz-container {
-                width: 95%;
                 padding: 20px;
                 margin: 20px auto;
             }
             .quiz-title {
-                font-size: 1.8em;
+                font-size: 1.6em;
             }
             .quiz-link {
                 padding: 12px 25px;
@@ -338,7 +346,6 @@
         }
         @media (max-width: 480px) {
             .header {
-                width: 98%;
                 padding: 15px;
             }
             .container {
@@ -346,11 +353,10 @@
                 gap: 8px;
             }
             .task-box {
-                width: 98%;
                 padding: 10px;
             }
             .task-box.expanded {
-                width: 98%;
+                width: clamp(95%, 98vw, 800px);
                 max-height: 90vh;
                 padding: 15px;
             }
@@ -373,7 +379,6 @@
                 font-size: 0.8em;
             }
             .quiz-container {
-                width: 98%;
                 padding: 15px;
                 margin: 15px auto;
             }
@@ -407,22 +412,17 @@
             <div class="task-content">
                 <h3>Coding Program</h3>
                 <div class="code-box">
-                    <pre><code>#include &lt;iostream&gt; 
-
+                    <pre><code>#include <iostream> 
 int main() {
-int iNo;
-double dblHarga, dblTotal;
-
-std::cout << "Masukkan Harga per unit: ";
-std::cin >> dblHarga;
-
-std::cout << "Masukkan Kuantiti: ";
-std::cin >> iNo;
-
-dblTotal = dblHarga * iNo;
-std::cout << "Total Harga adalah: " << dblTotal << std::endl;
-
-return 0;
+    int iNo;
+    double dblHarga, dblTotal;
+    std::cout << "Masukkan Harga per unit: ";
+    std::cin >> dblHarga;
+    std::cout << "Masukkan Kuantiti: ";
+    std::cin >> iNo;
+    dblTotal = dblHarga * iNo;
+    std::cout << "Total Harga adalah: " << dblTotal << std::endl;
+    return 0;
 }</code></pre>
                     <button class="copy-btn"></button>
                 </div>
@@ -453,9 +453,6 @@ return 0;
             </div>
         </div>
     </div>
-    <br>
-    <br>
-    <br>
     <div class="container">
         <div class="task-box">
             <h2 class="task-title">Coding 2</h2>
@@ -463,70 +460,38 @@ return 0;
             <div class="task-content">
                 <h3>Coding Program</h3>
                 <div class="code-box">
-                    <pre><code>#include &lt;iostream&gt; 
-                   
+                    <pre><code>#include <iostream> 
 using namespace std;
-
-// Fungsi untuk mencari harga produk berdasarkan ID
 double cariHargaProduk(int idProduk) {
-    // Simulasikan pencarian harga produk, Anda dapat menggantinya dengan logika sesuai kebutuhan
-    if (idProduk == 1) {
-        return 1500.0;
-    } else if (idProduk == 2) {
-        return 6000.0;
-    } else if (idProduk == 3) {
-        return 12000.0;
-    } else {
-        return -1.0; // Produk tidak ditemukan
-    }
+    if (idProduk == 1) return 1500.0;
+    else if (idProduk == 2) return 6000.0;
+    else if (idProduk == 3) return 12000.0;
+    else return -1.0;
 }
-
 int main() {
     int idProduk, kuantitas;
     double harga, totalHarga, diskon;
-
-    // Input ID produk
     cout << "Masukkan ID produk: ";
     cin >> idProduk;
-
-    // Cari harga produk berdasarkan ID
     harga = cariHargaProduk(idProduk);
-
     if (harga == -1) {
         cout << "Produk tidak ditemukan." << endl;
         return 1;
     }
-
-    // Input kuantitas
     cout << "Masukkan kuantitas: ";
     cin >> kuantitas;
-
-    // Hitung total harga sebelum diskon
     totalHarga = harga * kuantitas;
-
-    // Tentukan diskon berdasarkan total harga sebelum diskon
-    if (totalHarga >= 1000 && totalHarga < 5000) {
-        diskon = 0.05;
-    } else if (totalHarga >= 5000 && totalHarga < 10000) {
-        diskon = 0.08;
-    } else if (totalHarga >= 10000) {
-        diskon = 0.10;
-    } else {
-        diskon = 0.0; // Tidak ada diskon jika total harga kurang dari 1000
-    }
-
-    // Hitung total harga setelah diskon
+    if (totalHarga >= 1000 && totalHarga < 5000) diskon = 0.05;
+    else if (totalHarga >= 5000 && totalHarga < 10000) diskon = 0.08;
+    else if (totalHarga >= 10000) diskon = 0.10;
+    else diskon = 0.0;
     totalHarga = totalHarga - (totalHarga * diskon);
-
-    // Tampilkan hasil
     cout << "Harga produk: " << harga << endl;
-    cout << "Total harga sebelum diskon:1 " << totalHarga / (1 - diskon) << endl;
+    cout << "Total harga sebelum diskon: " << totalHarga / (1 - diskon) << endl;
     cout << "Diskon: " << diskon * 100 << "%" << endl;
     cout << "Total harga setelah diskon: " << totalHarga << endl;
-
     return 0;
-}
-                        </code></pre>
+}</code></pre>
                     <button class="copy-btn"></button>
                 </div>
             </div>
